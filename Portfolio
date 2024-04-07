@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAURENZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #ffffff; /* white background */
+      color: #000000; /* black text */
+      font-family: 'Lexend Peta', sans-serif; /* Lexend Peta font */
+      margin: 0;
+      padding: 0;
+      text-align: center; /* Align text to the left */
+    }
+    .container {
+      padding-left: 5vw; /* Add padding on the left */
+      max-width: 1000px; /* Set maximum width */
+      margin: 0 auto; /* Center container horizontally */
+    }
+    h1 {
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards; /* Fade in */
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #000000;
+      transition: color 0.3s ease; /* Add transition effect */
+    }
+    a:hover {
+      color: #808080; /* Change color on hover */
+    }
+    .resume-text {
+      width: 80%;
+      margin: 20px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: left;
+    }
+    .download-button {
+      background-color: #ffffff;
+      color: #000000;
+      border: 1px solid #000000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .download-button:hover {
+      background-color: #f2f2f2;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Adjust spacing between images */
+      padding: 20px;
+    }
+    .gallery img {
+      opacity: 0;
+      margin: 0px; /* Adjust margin between images */
+      width: 300px; /* Set width */
+      height: 300px; /* Set height */
+      object-fit: cover; /* Maintain aspect ratio */
+      animation: fadeInUp 2s ease forwards; /* Animation for loading each image */
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px); /* Start from slightly below */
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0); /* Move to original position */
+      }
+    }
+    .popup {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0);
+      z-index: 9999;
+    }
+    .popup img {
+      max-width: 80%;
+      max-height: 80%;
+      cursor: pointer; /* Change cursor to pointer */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="fade-in">LAURENZ</h1>
+
+  <p class="fade-in">
+    <a href="#" onclick="revealWords()">PORTFOLIO</a> | 
+    <a href="#" onclick="loadResumeSection()">RESUME</a>
+  </p>
+
+  <div id="portfolio" style="display: none;">
+    <p class="fade-in"><a href="#" onclick="loadGallery('STABLE DIFFUSION')">STABLE DIFFUSION</a></p>
+    <p class="fade-in"><a href="#" onclick="loadGallery('STABLE CASCADE')">STABLE CASCADE</a></p>
+  </div>
+  <div id="gallery" style="display: none;">
+    <div class="gallery">
+      <!-- Gallery images will be loaded here -->
+    </div>
+  </div>
+  <div id="resume" style="display: none;">
+    <p class="fade-in resume-text" id="resume-text">Laurenz Bacungan<br>
+    Mobile: +1 (808) 206-4823 • E-mail: Laurenz.bacungan@outlook.com<br><br>
+    <strong>Professional Summary:</strong><br>
+    A tech enthusiast with a passion for AI, gaming and software development, with over 10 years’ experience in Agile development as a Project Manager and Product Owner. Adept at stakeholder management, collaborating with cross-functional teams, user acceptance testing and providing customer service.<br><br>
+    <strong>Experience:</strong><br>
+    <strong>Partner Liaison/Product Owner</strong><br>
+    Tyler Technologies - Honolulu, HI | Aug 2016 – Present<br>
+    - Acted as the primary point of contact for stakeholders, providing regular updates and managed expectations.<br>
+    - Cultivated and nurtured robust professional relationships with stakeholders.<br>
+    - Defined project scopes and deliverables.<br>
+    - Collaborated closely with stakeholders to gather application requirements and craft comprehensive user stories.<br>
+    - Developed project budgets.<br>
+    - Orchestrated project sprints in coordination with development teams and stakeholders.<br>
+    - Conducted and led regular scrum meetings, ensuring alignment and progress.<br>
+    - Led cross-functional project teams, assigning tasks and responsibilities.<br>
+    - Conducted user acceptance testing and gathered feedback from stakeholders to validate product functionality and usability.<br>
+    - Coordinated with development teams to plan release schedules for milestones and deliverables.<br>
+    - Strategized and delivered briefings and training sessions for stakeholders and end-users.<br>
+    - Proactively managed and resolved escalated customer service issues for assigned applications.<br><br>
+    <strong>Social Media Analyst</strong><br>
+    VMC – Microsoft - Issaquah, WA | May 2016 – Aug 2016<br>
+    - Troubleshot hardware and software issues related to Microsoft Surface and Band products.<br>
+    - Provided exceptional customer service and technical support via Microsoft Answers community forum and chat.<br>
+    - Moderated the Microsoft Answers community forum, ensuring a positive user experience.<br><br>
+    <strong>Partner Liaison/Product Owner</strong><br>
+    Hawaii Information Consortium - Honolulu, HI | Aug 2012 – Aug 2015<br>
+    - Successfully improved and enhanced the Hawaii Bureau of Conveyances back-end system, LandLink.<br>
+    - Managed the end-to-end development process for the Hawaii Information Consortium eRecording application.<br>
+    - Oversaw the transition of the Bureau of Conveyances UCC application from a manual process to eRecording.<br><br>
+    <strong>Technical Support Representative</strong><br>
+    Hawaii Information Consortium – Honolulu, HI | Jun 2009 – Sep 2010<br>
+    - Managed and maintained online applications for the official State of Hawaii website, www.ehawaii.gov.<br>
+    - Provided efficient assistance to a diverse customer base, resolving issues via telephone, online chat, and email.<br>
+    - Trained newly hired support staff on operations and processes.<br><br>
+    <strong>Technical Support Representative</strong><br>
+    Telus International – Ortigas, Philippines | Jan 2008 – Aug 2008<br>
+    - Provided technical support for EA Games, EA Sports, and Maxis titles across various consoles and PCs.<br>
+    - Conducted in-depth troubleshooting and research for optimal problem resolution.<br>
+    - Monitored forums for updates on common problems and potential solutions for new releases.<br><br>
+    <strong>Customer Service Representative</strong><br>
+    Hong Kong Shanghai Bank Corporation – Makati, Philippines | Jan 2007 – Sep 2007<br>
+    - Handled a high volume of customer inquiries daily, ensuring prompt resolution and excellent service.<br>
+    - Verified customer identities and managed credit and debit card transactions.<br><br>
+    <strong>Education:</strong><br>
+    - Bachelor of Arts in Mass Communication, AMA Computer University, Quezon City, Philippines, 2008<br>
+    - Project Scrum Master I, Scrum.org, 2016<br><br>
+    <strong>Skills:</strong><br>
+    - Project Management<br>
+    - Product Ownership<br>
+    - Agile Methodologies<br>
+    - Stakeholder Management<br>
+    - Team Leadership<br>
+    - JIRA<br>
+    - Confluence<br>
+    - Comfy UI<br>
+    - Automatic1111<br>
+    - Stable Diffusion<br>
+    - ChatGPT</p>
+    <a href="https://1drv.ms/b/s!Ao70ppP4Ft31hdF0DggSUQ3eFDhzGw?e=anwXt5" class="download-button">Download Resume</a>
+  </div>
+</div>
+
+<script>
+  function revealWords() {
+    document.getElementById('resume').style.display = 'none'; // Hide resume content
+    document.getElementById('portfolio').style.display = 'block'; // Show portfolio content
+    document.getElementById('gallery').style.display = 'none'; // Hide gallery content
+  }
+
+  function loadGallery(type) {
+    document.getElementById('resume').style.display = 'none'; // Hide resume content
+    document.getElementById('portfolio').style.display = 'none'; // Hide portfolio content
+    document.getElementById('gallery').style.display = 'block'; // Show gallery content
+    
+    // Gallery images will be loaded here
+    const gallery = document.querySelector('.gallery');
+    gallery.innerHTML = ''; // Clear existing images
+
+    if (type === 'STABLE DIFFUSION') {
+      const images = ['https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192139&authkey=%21AEsXHvNS5ffROPE&width=1024&height=1024', 'https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192142&authkey=%21AMjrIG-5YYZ1y5w&width=1024&height=1024', 'https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192156&authkey=%21AHajfonISDzFyE0&width=1024&height=1024', 'https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192158&authkey=%21AGBIj84e2zhqK9U&width=768&height=768', 'https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192160&authkey=%21ALF_lq_gY_i7_iA&width=768&height=768', 'https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192159&authkey=%21AHPUOimQgeT9XoY&width=768&height=768', 'https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192154&authkey=%21AIagBooLEG6Jquo&width=3072&height=4096', 'https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192153&authkey=%21AIAO-099iI6EZnM&width=3072&height=4096', 'https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192155&authkey=%21AFUkl7e2imFRbjY&width=3072&height=4096']; // List of images for STABLE DIFFUSION
+      animateGallery(images);
+    } else if (type === 'STABLE CASCADE') {
+      const images = ['https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192147&authkey=%21AO-wDRPbfy4X-VQ&width=2048&height=2048', 'https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192148&authkey=%21APGjlUZvmvxoalo&width=2048&height=2048', 'https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192140&authkey=%21AOOfOYjYFIewOFo&width=2048&height=2048', 'https://onedrive.live.com/embed?resid=F5DD16F893A6F48E%2192138&authkey=%21AHZkbzbQufL9CJo&width=2048&height=2048']; // List of images for STABLE CASCADE
+      animateGallery(images);
+    }
+  }
+
+  function loadResumeSection() {
+    document.getElementById('portfolio').style.display = 'none'; // Hide portfolio content
+    document.getElementById('gallery').style.display = 'none'; // Hide gallery content
+    document.getElementById('resume').style.display = 'block'; // Show resume content
+  }
+
+  // Function to animate gallery images
+  function animateGallery(images) {
+    images.forEach((src, index) => {
+      const image = new Image();
+      image.src = src;
+      image.alt = 'Image ' + (index + 1);
+      image.className = 'fade-in';
+      image.style.animationDelay = (index + 1) * 600 + 'ms'; // Delay each image by 1 second after the previous one
+      image.addEventListener('click', () => {
+        openPopup(src); // Open popup with full-resolution image on click
+      });
+      document.querySelector('.gallery').appendChild(image);
+    });
+  }
+
+  // Function to create a popup modal with 3D unfold animation
+  function openPopup(imageSrc) {
+    // Create popup elements
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    const image = document.createElement('img');
+    image.src = imageSrc;
+
+    // Append elements to popup
+    popup.appendChild(image);
+    document.body.appendChild(popup);
+
+    // Apply 3D unfold animation
+    popup.style.transform = 'perspective(600px) rotateY(-60deg)';
+    popup.style.transition = 'transform 0.3s';
+
+    setTimeout(() => {
+        popup.style.transform = 'perspective(600px) rotateY(0)';
+    }, 100);
+
+    // Event listener to close popup on click
+    image.addEventListener('click', () => {
+        popup.style.transform = 'perspective(600px) rotateY(90deg)';
+        setTimeout(() => {
+            document.body.removeChild(popup); // Remove popup from DOM
+        }, 500);
+    });
+  }
+
+  function downloadResume() {
+    const resumeText = document.getElementById('resume-text').innerText;
+    const blob = new Blob([resumeText], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'resume.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  }
+</script>
+
+</body>
+</html>
